@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2 - Styles</title>
+    <link href="styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <h1 class="section">Text Styling</h1>
+    <p style="font-family: Arial, sans-serif">The quick brown fox jumps over the lazy dog</p>
+    <p style="font-weight: bold">The quick brown fox jumps over the lazy dog</p>
+    <p style="font-style: italic">The quick brown fox jumps over the lazy dog</p>
+    <p style="text-decoration: underline">The quick brown fox jumps over the lazy dog</p>
+    <p style="font-size: 28px;">The quick brown fox jumps over the lazy dog</p>
+    <p style="color: red;">The quick brown fox jumps over the lazy dog</p>
+    <p style="background-color: yellow">The quick brown fox jumps over the lazy dog</p>
+    <p style="text-align: center">The quick brown fox jumps over the lazy dog</p>
+    <p>The <span style="font-style: italic">quick</span> <span style="color: brown">brown</span> <span style="font-family: cursive">fox</span> <span style="font-weight: bold">jumps</span> over the <span style="text-decoration: underline">lazy</span> <span style="font-family: sans-serif">dog</span></p>
+
+    <h1 class="section">Box Styling</h1>
+    <div class="box" style="border: 1px solid black"></div>
+    <div class="box" style="border: 5px dashed red; border-radius: 10px"></div>
+    <div class="box" style="background-color: rgba(0,255,0,0.5)"></div>
+    <div class="box" style="background-image: url('http://icons.iconarchive.com/icons/wackypixel/dogs-n-puppies/128/Puppy-10-icon.png')"></div>
+    <div style="clear: both"></div>
+
+    <h1 class="section">Positioning</h1>
+    <div style="position: relative; left: 100px;">
+      <p>I'm Positioned <strong>Relatively</strong></p>
+    </div>
+    <div style="position: absolute; right: 100px; bottom: 150px;">
+      <p>I'm Positioned <strong>Absolutely</strong></p>
+    </div>
+    <div class="two-column">
+      <div class="column" style="background-color: rgba(255,0,0,0.25)">
+        <p>Left Column</p>
+        <div class="two-column">
+          <div class="column" style="background-color: rgba(255,0,0,0.25)">
+            <p>Left Inner Column</p>
+          </div>
+          <div class="column" style="background-color: rgba(0,0,255,0.25)">
+            <p>Right Inner Column</p>
+          </div>
+        </div>
+      </div>
+      <div class="column" style="background-color: rgba(0,0,255,0.25)">
+        <p>Right Column</p>
+        <div class="two-column">
+          <div class="column" style="background-color: rgba(255,0,0,0.25)">
+            <p>Left Inner Column</p>
+          </div>
+          <div class="column" style="background-color: rgba(0,0,255,0.25)">
+            <p>Right Inner Column</p>
+          </div>
+        </div>
+      </div>
+    <div>
+    <div style="clear: both"></div>
+    <br/>
+    <div class="navbar">
+      <div class="nav"><a href="#">One</a></div>
+      <div class="nav"><a href="#">Two</a></div>
+      <div class="nav"><a href="#">Three</a></div>
+      <div class="nav"><a href="#">Four</a></div>
+      <div class="nav"><a href="#">Five</a></div>
+    </div>
+
+    <br/>
+  </body>
+</html>

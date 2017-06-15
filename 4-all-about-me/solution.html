@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>4 - All About Me</title>
+    <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    * {
+      font-family: Tahoma, sans-serif;
+    }
+    p {
+      font-size: 18px;
+    }
+    a:link, a:visited {
+      text-decoration: none;
+      color: #0000bc;
+    }
+    a:hover, a:active {
+      text-decoration: underline;
+    }
+    body {
+      background-color: #33dd66;
+    }
+    #wrapper {
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 10px;
+    }
+    .center {
+      text-align: center;
+    }
+    .row {
+      width: 100%;
+    }
+    .column-3 {
+      width: 33%;
+      float: left;
+    }
+    .clear {
+      clear: both;
+    }
+    @media screen and (max-width: 600px) {
+      .column-3 {
+        width: 100%;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- Header with my photo -->
+      <div class="center">
+        <h1>Hello, world!</h1>
+        <img src="img/face.jpg" width="200"/>
+        <p>My name is <strong>Ben Centra</strong>. I'm an instructor for the Tech Focus program at <a href="http://campfitchymca.org/">Camp Fitch YMCA</a>.</p>
+      </div>
+
+      <!-- Things I want to learn -->
+      <div class="center">
+        <h2>Things I want to learn</h2>
+        <div class="column-3">
+          <h3>HTML</h3>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/200px-HTML5_logo_and_wordmark.svg.png" width="150"/>
+          <p>HyperText Markup Language</p>
+        </div>
+        <div class="column-3">
+          <h3>CSS</h3>
+          <img src="https://www.optimum7.com/wp-content/uploads/2013/04/CSS3-213x300.png" width="150"/>
+          <p>Cascading Style Sheets</p>
+        </div>
+        <div class="column-3">
+          <h3>JS</h3>
+          <img src="http://www.w3devcampus.com/wp-content/uploads/logoAndOther/logo_JavaScript.png" width="150"/>
+          <p>JavaScript</p>
+        </div>
+        <br class="clear"/>
+      </div>
+
+      <!-- Things I like -->
+      <div class="center">
+        <h2>Things I Like</h2>
+        <div class="row">
+          <div class="column-3">
+            <h3>Programming</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Code-1076536.jpg" width="200"/>
+            <p>I make websites and applications using HTML, CSS, and JavaScript.</p>
+          </div>
+          <div class="column-3">
+            <h3>Rock Climbing</h3>
+            <img src="http://redwallredwall.com/wp-content/uploads/2017/02/bouldering.jpg" width="200"/>
+            <p>I started indoor bouldering in college and have been doing it ever since!</p>
+          </div>
+          <div class="column-3">
+            <h3>Playing Music</h3>
+            <img src="http://www.guitarnoise.com/images/features/playing-guitar-live.jpg" width="200"/>
+            <p>I can play guitar, bass, drums, piano, clarinet, and more. I sing, too!</p>
+          </div>
+          <br class="clear"/>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

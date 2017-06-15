@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>1 - Markup</title>
+    <style>
+    .section {
+      font-family: cursive;
+    }
+    p, li {
+      font-size: 18px;
+    }
+    table, td {
+      border: 1px solid black;
+    }
+    .code {
+      font-family: monospace;
+      background-color: #dddddd;
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 class="section">Basic Structure</h1>
+      <img src="//i.imgur.com/pOY0hRB.png"/>
+      <p>The <span class="code">&lt;!DOCTYPE html&gt;</span> tells the browser "Hey, I'm HTML5!"</p>
+      <p>The <span class="code">&lt;html&gt;</span> tag wraps everything.</p>
+      <p>The <span class="code">&lt;head&gt;</span> is where "metadata" and stylesheets go.</p>
+      <p>A<span class="code">&lt;meta&gt;</span> tag is how you set metadata (encoding, etc).</p>
+      <p>The <span class="code">&lt;title&gt;</span> tag is where you set the page title.</p>
+      <p>A <span class="code">&lt;style&gt;</span> tag is where you add CSS.</p>
+      <p>A <span class="code">&lt;link&gt;</span> tag is where how you include external CSS files.</p>
+      <p>The <span class="code">&lt;body&gt;</span> is where all your page markup goes.</p>
+      <p>A <span class="code">&lt;script&gt;</span> tag where you add JavaScript (or include external files).</p>
+
+      <h1 class="section">Body Markup</h1>
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+      <p>Paragraph tags are for text, and create line breaks.</p>
+      <p>You can make text <strong>bold</strong>, <em>italic</em>, or <u>underlined</u>.</p>
+      <p>A <a href="//campfitchymca.org/">hyperlink</a> links to another webpage.</p>
+      <ul>
+        <li>Bullet Point 1</li>
+        <li>Bullet Point 2</li>
+        <li>Bullet Point 3</li>
+      </ul>
+      <ol>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+      </ol>
+      <table>
+        <tbody>
+          <tr>
+            <td>Row A, Col 1</td>
+            <td>Row A, Col 2</td>
+            <td>Row A, Col 3</td>
+          </tr>
+          <tr>
+            <td>Row B, Col 1</td>
+            <td>Row B, Col 2</td>
+            <td>Row B, Col 3</td>
+          </tr>
+          <tr>
+            <td>Row C, Col 1</td>
+            <td>Row C, Col 2</td>
+            <td>Row C, Col 3</td>
+          </tr>
+        </tbody>
+      </table>
+      <br/>
+      <img src="//assets.merriam-webster.com/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg"/>
+      <form onsubmit="return false">
+        <p><label>Text Input:</label> <input name="text" type="text" placeholder="Some Text"/></p>
+        <p>
+          <label>Dropdown:</label>
+          <select>
+            <option value="1">Item One</option>
+            <option value="2">Item Two</option>
+            <option value="3">Item Three</option>
+          </select>
+        </p>
+        <p><label>Checkboxes:</label> Item 1 <input name="checkbox" type="checkbox" value="1"/> Item 2 <input name="checkbox" type="checkbox" value="2"/> Item 3 <input name="checkbox" type="checkbox" value="3"/></p>
+        <p><label>Radio Buttons:</label> Item 1 <input name="radio" type="radio" value="1"/> Item 2 <input name="radio" type="radio" value="2"/> Item 3 <input name="radio" type="radio" value="3"/></p>
+        <textarea cols="40" rows="4">Type some stuff here</textarea>
+        <p><button type="submit">Submit</button> <button type="button">Cancel</button></p>
+      </form>
+
+      <h1 class="section">Anatomy of a Tag</h1>
+      <p><img width="400" src="//mdn.mozillademos.org/files/9347/grumpy-cat-small.png"/></p>
+      <p><img width="500" src="//mdn.mozillademos.org/files/9345/grumpy-cat-attribute-small.png"/></p>
+      <p>Source: <a href="//developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started">MDN</a></p>
+    </div>
+    <script>
+      console.log('Hello, world!');
+    </script>
+  </body>
+</html>

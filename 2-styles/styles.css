@@ -1,0 +1,40 @@
+.section {
+  font-family: cursive;
+}
+
+p, li {
+  font-size: 18px;
+}
+
+.box {
+  box-sizing: border-box;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.two-column {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.column {
+  width: 50%;
+  float: left;
+}
+
+.navbar {
+  text-align: center;
+  font-size: 18px;
+}
+
+.nav {
+  display: inline-block;
+  width: 100px;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.nav a {
+  text-decoration: none;
+}
