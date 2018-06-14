@@ -1,20 +1,30 @@
+// // FizzBuzz!
+// for (var i = 1; i <= 100; i++) {
+//   var out = ''
+//   if (i % 3 === 0) {
+//     out += 'Fizz';
+//   }
+//   if (i % 5 === 0) {
+//     out += 'Buzz';
+//   }
+//   if (!out.length) {
+//     out = i;
+//   }
+//   console.log(out);
+// }
+
 var output = document.getElementById('output');
-output.style.border = '1px solid black';
+console.log(output);
 output.style.width = '300px';
 output.style.height = '200px';
-
-/*
-* Variables, iteration, concatenation, functions, etc
-*/
+output.style.border = '1px solid black';
 
 function write(msg) {
   output.innerHTML += msg;
   output.innerHTML += '<br>';
 }
 
-function clear() {
-  output.innerHTML = '';
-}
+write('test');
 
 function countToN(n) {
   var str = '';
@@ -23,6 +33,8 @@ function countToN(n) {
   }
   write(str);
 }
+
+countToN(10);
 
 function countAdjectives() {
   var adjectives = document.getElementsByClassName('adj');
@@ -35,44 +47,52 @@ function countAdjectives() {
   write(str);
 }
 
-var x = 10;
-var y = 2;
+function countAdjectives() {
+  var adjectives = document.getElementsByClassName('adj');
+  return adjectives.length;
+}
 
-write(x + y);
-write(x - y);
-write(x * y);
-countToN(10);
-countAdjectives();
+write('Adjectives: ' + countAdjectives());
 
-/*
-* Todo List
-*/
 
-var todoList = document.querySelector('#list');
-// Initial list of todos
-var todos = [
-  'Learn JavaScript',
-  'Have Fun',
-  'Take a Nap'
-];
+var todolist = JSON.parse(window.localStorage.getItem('todolist')) || [];
+var todocount = 0;
 
+var list = document.querySelector('#list');
 function addTodoItem(value) {
   var item = document.createElement('li');
   var text = document.createTextNode(value);
   item.appendChild(text);
-  todoList.appendChild(item);
+  list.appendChild(item);
+  item.setAttribute('data-id', todocount);
+  todocount++;
+  item.addEventListener('click', function() {
+    todolist.splice(item.getAttribute('data-id'), 1);
+    list.removeChild(item);
+    window.localStorage.setItem('todolist', JSON.stringify(todolist));
+  });
 }
 
-// Add initial todos
-todos.forEach(function(todo) {
-  addTodoItem(todo);
-});
+var input = document.querySelector('input[type="text"]');
+var button = document.querySelector('#insertItem');
 
-var newItem = document.querySelector('input[type="text"]');
-var insertItem = document.querySelector('#insertItem');
+function handleNewTodo(event) {
+  if (!event.keyCode || event.keyCode === 13) {
+    if (input.value.trim() === '') {
+      return;
+    }
+    var newTodo = input.value;
+    addTodoItem(newTodo);
+    todolist.push(newTodo);
+    window.localStorage.setItem('todolist', JSON.stringify(todolist));
+    input.value = '';
+  }
+}
 
-// Add a new todo item when the button is pressed
-insertItem.addEventListener('click', function() {
-  addTodoItem(newItem.value);
-  newItem.value = '';
-});
+button.addEventListener('click', handleNewTodo);
+
+input.addEventListener('keydown', handleNewTodo);
+
+for (var i = 0; i < todolist.length; i++) {
+  addTodoItem(todolist[i]);
+}
