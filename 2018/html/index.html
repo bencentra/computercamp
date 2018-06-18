@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML</title>
+    <style type="text/css">
+
+    </style>
+  </head>
+  <body>
+<h1 id="html">HTML</h1>
+<p>HTML stands for "HyperText Markup Language". HTML provides the "structure" of a webpage.</p>
+<p>HTML elements have an opening tag, closing tag, and zero to many attributes</p>
+<pre><code class="html language-html">&lt;!-- A standard HTML element --&gt;
+&lt;div id="main" class="center"&gt;Hello, world!&lt;/div&gt;
+&lt;!-- A self-closing element --&gt;
+&lt;img src="./path/to/image.jpg" width="300"/&gt;
+</code></pre>
+<p>Type out a webpage element by element. You'll learn more if you don't copy the examples!</p>
+<p>Doctype tells the browser what version of HTML you're writing.</p>
+<pre><code class="html language-html">&lt;!-- HTML 5 doctype --&gt;
+&lt;!DOCTYPE html&gt;
+</code></pre>
+<p>The <code>&lt;html&gt;</code> tag wraps all other tags.</p>
+<pre><code class="html language-html">&lt;!DOCTYPE html&gt;
+&lt;!-- The root of my DOM tree --&gt;
+&lt;html&gt;
+  &lt;!-- All other elements go here --&gt;
+&lt;/html&gt;
+</code></pre>
+<p>The <code>&lt;head&gt;</code> tag contains page metadata. <code>&lt;title&gt;</code> is the text that appears in the browser tab.</p>
+<pre><code class="html language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;!-- Metadata goes here --&gt;
+  &lt;head&gt;
+    &lt;!-- This appears in the browser tab --&gt;
+    &lt;title&gt;My First Website&lt;/title&gt;
+  &lt;/head&gt;
+&lt;/html&gt;
+</code></pre>
+<p>We'll put more things in the <code>&lt;head&gt;</code> later!</p>
+<p>The <code>&lt;body&gt;</code> tag contains all the page content. Let's start with an <code>&lt;h1&gt;</code> (heading) tag:</p>
+<pre><code class="html language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Website&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;!-- Body content goes here --&gt;
+  &lt;body&gt;
+    &lt;!-- Classic first webpage! --&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>(From now on examples are assumed to be placed in the <code>&lt;body&gt;</code>)</p>
+<h2 id="styledtags">Styled Tags</h2>
+<p>The following HTML tags come with default styles and spacing.</p>
+<p>There are actually six different heading tags:</p>
+<pre><code class="html language-html">&lt;!-- Each one gets smaller --&gt;
+&lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;h2&gt;Header 2&lt;/h2&gt;
+&lt;h3&gt;Header 3&lt;/h3&gt;
+&lt;h4&gt;Header 4&lt;/h4&gt;
+&lt;h5&gt;Header 5&lt;/h5&gt;
+&lt;h6&gt;Header 6&lt;/h6&gt;
+</code></pre>
+<p>Text content will likely go in a <code>&lt;p&gt;</code> (paragraph) tag. These provide a margin around the content.</p>
+<pre><code class="html language-html">&lt;!-- There will be some spacing between each line of text --&gt;
+&lt;p&gt;The quick brown fox jumps over the lazy dog&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet and the rest&lt;/p&gt;
+</code></pre>
+<p>You can link to other pages, or hop around the current page, using the <code>&lt;a&gt;</code> (anchor) tag:</p>
+<pre><code class="html language-html">&lt;a href="#section-id"&gt;Jump to Section&lt;/a&gt;
+&lt;a href="http://google.com"&gt;Go to Google&lt;/a&gt;
+&lt;a href="mailto:blcentra@gmail.com"&gt;Email Me&lt;/a&gt;
+</code></pre>
+<p>Usually you'll want to style text with CSS instead of HTML, but you can do some basic things using tags:</p>
+<pre><code class="html language-html">&lt;p&gt;&lt;b&gt;Bold&lt;/b&gt; not bold &lt;strong&gt;also bold&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Italic&lt;/i&gt; not italic &lt;em&gt;also italic&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Underline&lt;/u&gt; not underline&lt;/p&gt;
+</code></pre>
+<p>You can create bulleted ("unordered") lists with <code>&lt;ul&gt;</code> and numbered ("ordered") lists with <code>&lt;ol&gt;</code>. <code>&lt;li&gt;</code> is used by both for creating list items.</p>
+<pre><code class="html language-html">&lt;!-- Bulleted (or "unordered") list --&gt;
+&lt;p&gt;Things To Do:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Learn HTML&lt;/li&gt;
+  &lt;li&gt;Play Gaga Ball&lt;/li&gt;
+  &lt;li&gt;Swim in the lake&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- Numbered (or "ordered") list --&gt;
+&lt;p&gt;Favorite Foods&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Chicken Patties&lt;/li&gt;
+  &lt;li&gt;Breakfast Bars&lt;/li&gt;
+  &lt;li&gt;Cookies:
+    &lt;!-- You can nest lists! --&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Oreo's&lt;/li&gt;
+      &lt;li&gt;Chips Ahoy&lt;/li&gt;
+      &lt;li&gt;Nutter Butters&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p>You can create tables with a <code>&lt;table&gt;</code> tag. Use <code>&lt;tr&gt;</code> to create new rows and <code>&lt;td&gt;</code> for each column within a row. Use <code>&lt;th&gt;</code> instead of a <code>&lt;td&gt;</code> for a heading.</p>
+<pre><code class="html language-html">&lt;!-- Only use tables for tabular data, not for page layout --&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;1&lt;/td&gt;
+    &lt;th&gt;2&lt;/td&gt;
+    &lt;th&gt;3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;A&lt;/th&gt;
+    &lt;td&gt;A1&lt;/td&gt;
+    &lt;td&gt;A2&lt;/td&gt;
+    &lt;td&gt;A3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;B&lt;/th&gt;
+    &lt;td&gt;B1&lt;/td&gt;
+    &lt;td&gt;B2&lt;/td&gt;
+    &lt;td&gt;B3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;C&lt;/th&gt;
+    &lt;td&gt;C1&lt;/td&gt;
+    &lt;td&gt;C2&lt;/td&gt;
+    &lt;td&gt;C3&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<p>What would the internet be without images? Use an <code>&lt;img&gt;</code> tag with a <code>src</code> attribute set to the URL or path to the image you want to display.</p>
+<p>(Images are "self-closing" tags - there is no <code>&lt;/img&gt;</code> because an image can't contain other content).</p>
+<pre><code class="html language-html">&lt;!-- Loading an image by a relative path --&gt;
+&lt;img src="./cat.jpg" /&gt;
+&lt;!-- Loading an image from a URL --&gt;
+&lt;img src="https://purr.objects-us-west-1.dream.io/i/SkeSE.jpg" /&gt;
+</code></pre>
+<p>Forms can be used to accept user input of various kinds. There is a <code>&lt;form&gt;</code> tag, but you don't really need it unless you're doing old-school server communication (or maybe for styling purposes). You can interact with form elements directly with JavaScript.</p>
+<p>Most fields are defined using an <code>&lt;input&gt;</code> tag (also self-closing) with a <code>type</code> attribute - text, radio, checkbox, etc. Buttons can be defined with a <code>&lt;button&gt;</code>, dropdowns can be defined with a <code>&lt;select&gt;</code>, and large text boxes can be defined with <code>&lt;textarea&gt;</code>. You can associate text with form fields using a <code>&lt;label&gt;</code> - if the <code>name</code> attributes match, clicking a label will also engage the form field!</p>
+<pre><code class="html language-html">&lt;!-- Wrapping in a `&lt;form&gt;` tag is optional nowadays--&gt;
+&lt;!-- Use 'action="path/to/handler.php"' and 'method="POST"' attributes for old-school form submission --&gt;
+&lt;form&gt;
+  &lt;!-- Text input --&gt;
+  &lt;label for="person-name"&gt;Your name:&lt;/label&gt;
+  &lt;input type="text" name="person-name" placeholder="Your name" /&gt;
+  &lt;br&gt;
+  &lt;!-- Radio buttons (select one) --&gt;
+  &lt;label for="shirt-size"&gt;Shirt size:&lt;/label&gt;
+  &lt;input type="radio" name="shirt-size" value="small"&gt;
+  &lt;input type="radio" name="shirt-size" value="medium"&gt;
+  &lt;input type="radio" name="shirt-size" value="large"&gt;
+  &lt;input type="radio" name="shirt-size" value="x-large"&gt;
+  &lt;br&gt;
+  &lt;!-- Checkboxes (select many) --&gt;
+  &lt;label for="shirt-groups"&gt;Logos on shirt:&lt;/label&gt;
+  &lt;input type="checkbox" name="shirt-groups" value="camp-fitch"/&gt;
+  &lt;input type="checkbox" name="shirt-groups" value="tech-focus"/&gt;
+  &lt;input type="checkbox" name="shirt-groups" value="first-mates-club"/&gt;
+  &lt;br&gt;
+  &lt;!-- Number input --&gt;
+  &lt;label for="shirt-count"&gt;# of Shirts:&lt;/label&gt;
+  &lt;input type="number" name="shirt-count"/&gt;
+  &lt;br&gt;
+  &lt;!-- Dropdown (select one) --&gt;
+  &lt;label for="shirt-color"&gt;Shirt color:&lt;/label&gt;
+  &lt;select name="shirt-color"&gt;
+    &lt;option value="red"&gt;Red&lt;/option&gt;
+    &lt;option value="blue"&gt;Blue&lt;/option&gt;
+    &lt;option value="green"&gt;Green&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;br&gt;
+  &lt;!-- Textarea --&gt;
+  &lt;label for="comments"&gt;Comments:&lt;/label&gt;
+  &lt;textarea name="comments" rows="3" cols="20" placeholder="Thanks a ton!"&gt;&lt;/textarea&gt;
+  &lt;br&gt;
+  &lt;!-- Buttons --&gt;
+  &lt;button type="button"&gt;Submit Order!&lt;/button&gt;
+  &lt;br&gt;
+  &lt;!-- Use a "submit" button for old-school form submission --&gt;
+  &lt;label for="submit"&gt;Submit (the old way)!&lt;/label&gt;
+  &lt;input type="submit" name="submit" value="Submit" /&gt;&gt;
+&lt;/form&gt;
+</code></pre>
+<h2 id="unstyledtags">Unstyled Tags</h2>
+<p>The following HTML tags do NOT come with default styles or spacing. You can use CSS to style these elements exactly as you like!</p>
+<p>To create arbitrary blocks of content, create a <code>&lt;div&gt;</code>:</p>
+<pre><code class="html language-html">&lt;!-- "id" attributes are unique, "class" attributes can be reused. --&gt;
+&lt;!-- More on these when we cover CSS! --&gt;
+&lt;div class="row"&gt;
+  &lt;div id="blue" class="column"&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet and the rest&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="red" class="column"&gt;
+    &lt;p&gt;The quick brown fox jumps over the lazy dog&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>To style inline content (text within other elements), use a <code>&lt;span&gt;</code>:</p>
+<pre><code class="html language-html">&lt;!-- spans can wrap any number of characters, or even none at all! --&gt;
+&lt;p&gt;The &lt;span class="blue"&gt;quick brown fox&lt;/span&gt; jumped over the &lt;span class="red"&gt;lazy dog&lt;/span&gt;&lt;/p&gt;
+</code></pre>
+<p>In HTML5 there are many "semantic" tags - tags that behave like <code>&lt;div&gt;</code>s but are named to better convey their purpose. These include <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;nav&gt;</code>.</p>
+<pre><code class="html language-html">&lt;!-- You could replace all semantic tags with &lt;div&gt;'s and this would look the same! --&gt;
+&lt;header&gt;
+  &lt;h3&gt;Website&lt;/h3&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;section id="banner"&gt;
+  &lt;h1&gt;Welcome to Website!&lt;/h1&gt;
+&lt;/section&gt;
+&lt;section id="main"&gt;
+  &lt;article class="blue"&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet and the rest&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="red"&gt;
+    &lt;p&gt;The quick brown fox jumps over the lazy dog&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+&lt;footer&gt;
+  &lt;p&gt;Copyright 2018 &lt;a href="mailto:blcentra@gmail.com"&gt; Ben Centra&lt;/a&gt;&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+<h2 id="exercise">Exercise</h2>
+<p>Create the scaffolding for an "All About Me" website. This site should include:</p>
+<ul>
+<li>Your name in a heading tag</li>
+<li>A picture of yourself (we'll get you one if you need it)</li>
+<li>A short description of yourself</li>
+<li>A hyperlink to a different website</li>
+<li>3 Sections:</li>
+<li>"Things I Want To Learn" as a bulleted list, with 3 items</li>
+<li>"My Favorite Things" as a numbered list, with 3 items</li>
+<li>A "Contact Me" form that accepts a From Name, From Email, and Message</li>
+<li>A navigation menu to jump to the different sections</li>
+</ul>
+  </body>
+</html>
