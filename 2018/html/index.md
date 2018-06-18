@@ -1,21 +1,4 @@
-# Tech Focus - Web Development
-
-Last updated: June 2018
-
-TODO:
-* [x] HTML
-* [ ] CSS
-* [ ] JS
-* [ ] All About Me
-* [ ] Pong
-
-## Setup
-
-On each camper machine:
-* Download Atom
-* Clone this project
-
-## HTML
+# HTML
 
 HTML stands for "HyperText Markup Language". HTML provides the "structure" of a webpage.
 
@@ -62,7 +45,7 @@ The `<head>` tag contains page metadata. `<title>` is the text that appears in t
 
 We'll put more things in the `<head>` later!
 
-The `<body>` tag contains all the page content. Let's start with an `<h1>` (header) tag:
+The `<body>` tag contains all the page content. Let's start with an `<h1>` (heading) tag:
 
 ```html
 <!DOCTYPE html>
@@ -80,11 +63,11 @@ The `<body>` tag contains all the page content. Let's start with an `<h1>` (head
 
 (From now on examples are assumed to be placed in the `<body>`)
 
-### Styled Tags
+## Styled Tags
 
 The following HTML tags come with default styles and spacing.
 
-There are actually six different header tags:
+There are actually six different heading tags:
 
 ```html
 <!-- Each one gets smaller -->
@@ -102,6 +85,22 @@ Text content will likely go in a `<p>` (paragraph) tag. These provide a margin a
 <!-- There will be some spacing between each line of text -->
 <p>The quick brown fox jumps over the lazy dog</p>
 <p>Lorem ipsum dolor sit amet and the rest</p>
+```
+
+You can link to other pages, or hop around the current page, using the `<a>` (anchor) tag:
+
+```html
+<a href="#section-id">Jump to Section</a>
+<a href="http://google.com">Go to Google</a>
+<a href="mailto:blcentra@gmail.com">Email Me</a>
+```
+
+Usually you'll want to style text with CSS instead of HTML, but you can do some basic things using tags:
+
+```html
+<p><b>Bold</b> not bold <strong>also bold</strong></p>
+<p><i>Italic</i> not italic <em>also italic</em></p>
+<p><u>Underline</u> not underline</p>
 ```
 
 You can create bulleted ("unordered") lists with `<ul>` and numbered ("ordered") lists with `<ol>`. `<li>` is used by both for creating list items.
@@ -223,7 +222,7 @@ Most fields are defined using an `<input>` tag (also self-closing) with a `type`
 </form>
 ```
 
-### Unstyled Tags
+## Unstyled Tags
 
 The following HTML tags do NOT come with default styles or spacing. You can use CSS to style these elements exactly as you like!
 
@@ -279,6 +278,15 @@ In HTML5 there are many "semantic" tags - tags that behave like `<div>`s but are
 </footer>
 ```
 
-## CSS
+## Exercise
 
-## JavaScript
+Create the scaffolding for an "All About Me" website. This site should include:
+* Your name in a heading tag
+* A picture of yourself (we'll get you one if you need it)
+* A short description of yourself
+* A hyperlink to a different website
+* 3 Sections:
+  * "Things I Want To Learn" as a bulleted list, with 3 items
+  * "My Favorite Things" as a numbered list, with 3 items
+  * A "Contact Me" form that accepts a From Name, From Email, and Message
+* A navigation menu to jump to the different sections
