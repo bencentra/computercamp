@@ -116,7 +116,8 @@ var str4 = `${str}, ${str2}, and so are template strings!`;
 var test = "test string";
 console.log(str.length); // => 11 - The number of items in the array
 console.log(str[0]); // => "t"
-console.log(str.replace("t", "b")) // => "besb sbring"
+console.log(str.replace("test", "lol")); // => "lol string"
+console.log(str.replace(/t/g, "b")) // => "besb sbring"
 console.log(str.split(" ")); // => ["test", "string"]
 ```
 
@@ -125,8 +126,8 @@ _JavaScript is silly_ - beware of type coercion! In some situations JavaScript w
 ```js
 var x = 1;
 var y = "1";
-console.log(x + y); // => 2
-console.log(y + x); // => "22"
+console.log(x + y); // => "11"
+console.log(y + x); // => "11"
 console.log(x == y); // => true
 console.log(x === y); // => false
 ```
@@ -178,9 +179,10 @@ var three = 3;
 var arr2 = [1, 'two', three];
 
 // Common array methods
+console.log(arr[0]); // => 1
 arr.push(1); // Add an item to the end of the array
 arr.unshift(0); // Add an item to the beginning of the array
-arr.length; // => 2 - The number of items in the array
+console.log(arr.length); // => 2 - The number of items in the array
 arr.pop(); // => 1 - remove the item at the end of the array
 arr.shift(); // => 0 - remove the item at the beginning of the array
 arr2.indexOf('two'); // => 1 - the index of the element "two" in the array
@@ -198,7 +200,7 @@ var car = {
   speed: 10,
   drive: function() {
     // More on what "this" means later
-    console.log(`Driving a ${this.type} at speed ${this.speed}`);
+    console.log('Driving my ' + this.type + ' at ' + this.speed + 'mph');
   }
 };
 console.log(car.type); // => "Ford"
@@ -341,7 +343,7 @@ var product = 1;
 });
 console.log(product); // => 6
 
-// ES6 has "arrow functions" that implicitly return it they're on one line
+// ES6 has "arrow functions" that implicitly return if they're on one line
 const divide = (a, b) => a / b;
 divide(x, y); // => 0.6666666666666666
 
@@ -403,16 +405,153 @@ Hints:
 * What parameters do you want your function to accept?
 * What data type in JavaScript is best at storing key/value pairs like our divisibility rules and output strings? How do you iterate over that data type?
 
-## DOM Manipulation
+## The DOM
 
+An HTML document is represented in JavaScript by something called the "Document Object Model," or DOM for short. In the DOM, each HTML element is represented by an object nested within a tree structure like:
 
+```
+document
+  -html
+    - head
+    - body
+      - h1
+      - p
+      ...
+```
+
+We can interact with the DOM through the `document` object in a browser.
+
+## Selecting DOM Elements
+
+Let's say we have a simple list:
+
+```html
+<ul id="list">
+  <li class="item">Item 1</li>
+  <li class="item">Item 2</li>
+  <li class="item">Item 3</li>
+</li>
+```
+
+There are many ways to select DOM elements. Each method returns one element, or an array of elements.
+
+```js
+// Get a single element by ID
+var list = document.getElementById('list');
+// Or get the first element that matches a CSS selector
+var list = document.querySelector('#list');
+
+// Get many elements by class name
+var items = document.getElementsByClassName('item');
+// Or get all elements that match a CSS selector
+var items = document.querySelectorAll('.list');
+
+// Get many elements by tag name
+var items = document.getElementsByTagName('li');
+// Or get all elements that match a CSS selector
+var items = document.querySelector('li');
+```
 
 ## Event Handling
 
+Let's say we're writing a simple counter program:
 
+```html
+<input id="count" type="text" value="0"/>
+<button id="increment">Add One</button>
+<button id="decrement">Minus One</button>
+```
 
-## Simple Data Storage
+DOM elements have a method called `addEventListener` that can be used to "listen" for a specific event and call a function when the event is fired. For instance, if we wanted to listen for button clicks:
 
+```js
+var count = 0;
+var countZone = document.getElementById('count');
+var plusButton = document.getElementById('increment');
+var minusButton = document.getElementById('decrement');
+
+plusButton.addEventListener('click', function(event) {
+  count++;
+  countZone.value = count;
+});
+
+minusButton.addEventListener('click', function(event) {
+  count--;
+  countZone.value = count;
+});
+```
+
+There are lots of events you can listen for, but the most common are probably mouse events and keyboard events. `click` is a mouse event, as are `mouseup`, `mousedown`, `mouseover`, `mouseenter`, and `mouseleave`.
+
+Keyboard events include `keypress`, `keyup`, and `keydown`. Let's support incrementing and decrementing the counter using the up and down arrow keys:
+
+```js
+countZone.addEventListener('keydown', function(event) {
+  if (event.keyCode === 38) { // UP
+    count++;
+    countZone.value = count;
+  } else if (event.keyCode === 40) { // DOWN
+    count--;
+    countZone.value = count;
+  }
+});
+```
+
+Note that event handlers are passed an object as a parameter, typically called `event`. The `event` object contains useful information about the event that fired. Above, we use `event.keyCode` to figure out which key was pressed. We could refactor our button code to use `event.target` to know which button was pressed:
+
+```js
+function updateCount(event) {
+  if (event.target === plusButton) {
+    count++;
+  } else if (event.target === minusButton) {
+    count--;
+  }
+  countZone.value = count;
+}
+
+plusButton.addEventListener('click', updateCount);
+minusButton.addEventListener('click', updateCount);
+```
+
+## Basic Data Storage
+
+Let's take our counter program to the next level by storing the result across page loads. Browsers include two objects used for persisting data: `localStorage` and `sessionStorage`. They follow the same interface but `localStorage` persists even after the browser is closed (`sessionStorage` clears when the browser is closed). Be careful - all items stored with `localStorage` are converted to a String!
+
+Let's use `localStorage` to load and persist the `count` variable:
+
+```js
+// Get the value from localStorage or, if not set, use a default
+var count = parseInt(localStorage.getItem('count')) || 0;
+
+function updateCount(event) {
+  if (event.target === plusButton) {
+    count++;
+  } else if (event.target === minusButton) {
+    count--;
+  }
+  countZone.value = count;
+  // Persist the count in localStorage
+  localStorage.setItem('count', count);
+}
+```
+
+When dealing with arrays and objects, make sure to use `JSON.stringify()` before storing a value and `JSON.parse()` when reading it again. For instance:
+
+```js
+// We've replaced "count" with "data", an object with one property
+var data = JSON.parse(localStorage.getItem('count')) || { count: 0 };
+
+function updateCount(event) {
+  if (event.target === plusButton) {
+    data.count++;
+  } else if (event.target === minusButton) {
+    data.count--;
+  }
+  countZone.value = data.count;
+  // Persist the entire data object in localStorage
+  localStorage.setItem('count', JSON.stringify(data));
+}
+```
 
 ## Exercise - Todo List
 
