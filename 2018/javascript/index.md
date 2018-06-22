@@ -457,8 +457,10 @@ var items = document.querySelector('li');
 Once you have a reference to a DOM element, you can interact with it programatically. This allows you do do lots of what you might do in HTML or CSS:
 
 ```js
-var list = document.getElementById('list'); 
+var list = document.getElementById('list');
 ```
+
+TODO - Finish this!
 
 ## Event Handling
 
