@@ -430,7 +430,7 @@ Let's say we have a simple list:
   <li class="item">Item 1</li>
   <li class="item">Item 2</li>
   <li class="item">Item 3</li>
-</li>
+</ul>
 ```
 
 There are many ways to select DOM elements. Each method returns one element, or an array of elements.
@@ -451,6 +451,16 @@ var items = document.getElementsByTagName('li');
 // Or get all elements that match a CSS selector
 var items = document.querySelector('li');
 ```
+
+## Modifying DOM Elements
+
+Once you have a reference to a DOM element, you can interact with it programatically. This allows you do do lots of what you might do in HTML or CSS:
+
+```js
+var list = document.getElementById('list');
+```
+
+TODO - Finish this!
 
 ## Event Handling
 
