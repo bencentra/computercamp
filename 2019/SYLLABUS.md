@@ -1,5 +1,7 @@
 # Syllabus
 
+> Basic game development with JavaScript and Phaser
+
 ## Monday
 
 Intro to JS
@@ -40,6 +42,10 @@ TODO Things to figure out
 * Camera control http://labs.phaser.io/index.html?dir=input/camera/&q=
 * Multiple scenes http://labs.phaser.io/view.html?src=src\scenes\changing%20large%20scene.js
 
-# Wednesday
+# Wednesday - Friday
 
-TODO
+Game Ideas:
+* Collect the Squares: spawn some squares, collect them all, spawn new squares and add moving enemies
+* Simple Shooter: Move up and down, shoot enemies coming in from the side
+* Pong: You know what Pong is
+* Infinite Runner: As you move forward, spawn platforms (within reach) and obstacles to dodge
