@@ -13,6 +13,7 @@ Intro to JS
 * Comparators (===, !==, <, >, <=, >=)
 * Control Flow (if/else if/else, switch/case, ternary operator)
 * Loops (while, for, for in)
+* Functions (function() {})
 * Arrays ([], length, forEach)
 * Objects ({}, accessors)
 * DOM Interaction (createElement, querySelector, querySelectorAll, addEventListener)
